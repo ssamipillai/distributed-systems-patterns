@@ -50,12 +50,12 @@ export function SearchPalette({
       <button
         type="button"
         aria-label="Close search"
-        className="absolute inset-0 bg-bg/70"
+        className="absolute inset-0 bg-black/40 backdrop-blur-xs"
         onClick={() => onOpenChange(false)}
       />
       <Command
         label="Search the field manual"
-        className="relative z-10 w-full max-w-lg overflow-hidden rounded-xl bg-surface hairline"
+        className="relative z-10 w-full max-w-lg overflow-hidden rounded-xl bg-surface border border-line-strong shadow-2xl"
       >
         <div className="flex items-center gap-2 border-b border-line px-4">
           <Search className="size-4 text-muted" aria-hidden />
@@ -82,11 +82,11 @@ export function SearchPalette({
                   void navigate({ to: "/d/$slug", params: { slug: hit.slug } });
                 }}
                 className={cn(
-                  "cursor-pointer rounded-md px-3 py-2.5 data-[selected=true]:bg-raised",
+                  "cursor-pointer rounded-md px-3 py-2.5 transition-colors data-[selected=true]:bg-[#e8f0fe]",
                 )}
               >
-                <p className="font-mono text-[10px] tracking-[0.16em] text-steel uppercase">{hit.kind}</p>
-                <p className="mt-1 text-sm text-fg">{hit.title}</p>
+                <p className="font-mono text-[10px] font-semibold tracking-wider text-steel uppercase">{hit.kind}</p>
+                <p className="mt-1 text-sm font-medium text-fg">{hit.title}</p>
                 <p className="mt-0.5 line-clamp-2 text-xs leading-relaxed text-muted">{hit.blurb}</p>
               </Command.Item>
             ))

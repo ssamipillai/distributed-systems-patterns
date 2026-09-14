@@ -13,10 +13,10 @@ function Home() {
   return (
     <main>
       <section className="mx-auto max-w-6xl px-4 pb-8 pt-12 sm:px-6 sm:pt-20">
-        <p className="font-mono text-[11px] tracking-[0.22em] text-steel uppercase">
+        <p className="font-mono text-xs font-semibold tracking-wider text-steel uppercase">
           Twelve dilemmas · interactive field notes
         </p>
-        <h1 className="mt-4 max-w-3xl font-display text-4xl font-medium leading-[1.08] tracking-tight text-fg sm:text-6xl">
+        <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-[1.12] tracking-tight text-fg sm:text-6xl">
           The decisions that only appear under load.
         </h1>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
@@ -28,14 +28,14 @@ function Home() {
             to="/d/$slug"
             params={{ slug: "consistency" }}
             aria-label="Start with consistency"
-            className="inline-flex h-12 items-center gap-2 rounded-md bg-fg px-5 text-sm font-medium text-bg"
+            className="inline-flex h-11 items-center gap-2 rounded-md bg-steel px-5 text-sm font-medium text-white shadow-xs hover:bg-[#1557b0] transition-colors"
           >
             Start with consistency
             <ArrowRight className="size-4" />
           </Link>
           <a
             href="#atlas"
-            className="inline-flex h-12 items-center rounded-md px-4 text-sm font-medium text-muted hover:text-fg"
+            className="inline-flex h-11 items-center rounded-md border border-line-strong bg-surface px-4 text-sm font-medium text-fg shadow-xs hover:bg-raised transition-colors"
           >
             Skip to the atlas
           </a>
@@ -107,7 +107,7 @@ function Home() {
                       <Link
                         to="/d/$slug"
                         params={{ slug }}
-                        className="inline-flex h-9 items-center rounded-sm bg-raised px-2.5 text-xs font-medium text-fg"
+                        className="inline-flex h-8 items-center rounded-md border border-line bg-raised px-2.5 text-xs font-medium text-fg hover:border-steel hover:text-steel transition-colors"
                       >
                         {d.short}
                       </Link>
@@ -125,15 +125,15 @@ function Home() {
           <h2 className="font-display text-2xl font-medium tracking-tight">How to read this</h2>
           <ol className="mt-5 grid gap-4 text-sm leading-relaxed text-muted sm:grid-cols-3">
             <li>
-              <span className="font-mono text-[11px] text-steel">01</span>
+              <span className="font-mono text-xs font-semibold text-steel">01</span>
               <p className="mt-1 text-fg">Run the lab until the insight line changes its mind. The widgets are the argument.</p>
             </li>
             <li>
-              <span className="font-mono text-[11px] text-steel">02</span>
+              <span className="font-mono text-xs font-semibold text-steel">02</span>
               <p className="mt-1 text-fg">Options are contracts, not teams. Read the cost as carefully as the promise.</p>
             </li>
             <li>
-              <span className="font-mono text-[11px] text-steel">03</span>
+              <span className="font-mono text-xs font-semibold text-steel">03</span>
               <p className="mt-1 text-fg">Mark a chapter understood when you can name the failure mode you are buying.</p>
             </li>
           </ol>

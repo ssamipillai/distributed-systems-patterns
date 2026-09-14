@@ -26,7 +26,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="paper-grid min-h-dvh">
-      <header className="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur-sm">
+      <header className="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur-md">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:h-16 sm:px-6">
           <button
             type="button"
@@ -37,8 +37,8 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Menu className="size-5" />
           </button>
           <Link to="/" className="flex items-baseline gap-2">
-            <span className="font-display text-xl tracking-tight text-fg">Quorum</span>
-            <span className="hidden font-mono text-micro tracking-kicker text-muted uppercase sm:inline">
+            <span className="font-display text-xl font-semibold tracking-tight text-fg">Quorum</span>
+            <span className="hidden font-mono text-micro font-medium tracking-wider text-muted uppercase sm:inline">
               Field manual
             </span>
           </Link>
@@ -50,7 +50,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             >
               <Search className="size-4" />
               <span className="hidden sm:inline">Search</span>
-              <kbd className="hidden rounded-xs bg-raised px-1.5 py-0.5 font-mono text-micro text-faint md:inline">
+              <kbd className="hidden rounded bg-raised border border-line-strong px-1.5 py-0.5 font-mono text-micro text-muted md:inline">
                 ⌘K
               </kbd>
             </button>
@@ -71,12 +71,12 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="fixed inset-0 z-50 lg:hidden">
           <button
             type="button"
-            className="absolute inset-0 bg-bg/70"
+            className="absolute inset-0 bg-black/40 backdrop-blur-xs"
             aria-label="Close chapters"
             onClick={() => setNavOpen(false)}
           />
-          <nav className="relative h-full w-80 max-w-full overflow-y-auto bg-surface p-4 hairline">
-            <p className="mb-3 font-mono text-2xs tracking-kicker text-muted uppercase">Chapters</p>
+          <nav className="relative h-full w-80 max-w-full overflow-y-auto bg-surface p-4 border-r border-line shadow-xl">
+            <p className="mb-3 font-mono text-xs font-medium tracking-wider text-muted uppercase">Chapters</p>
             <ChapterList pathname={pathname} visited={visited} mastered={mastered} />
           </nav>
         </div>
@@ -111,7 +111,7 @@ export function ChapterList({
               params={{ slug: d.slug }}
               className={cn(
                 "flex min-h-11 items-center gap-3 rounded-md px-2.5 text-sm transition-[background-color,color] duration-150",
-                on ? "bg-raised text-fg" : "text-muted hover:bg-raised/70 hover:text-fg",
+                on ? "bg-[#e8f0fe] text-[#174ea6] font-medium" : "text-muted hover:bg-raised hover:text-fg",
               )}
             >
               <span className="w-6 font-mono text-2xs text-faint tabular-nums">

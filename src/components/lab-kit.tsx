@@ -13,19 +13,19 @@ export function LabFrame({
   insight: string;
 }) {
   return (
-    <section className="overflow-hidden rounded-xl bg-surface hairline">
-      <header className="flex flex-col gap-1 border-b border-line px-5 py-4 sm:px-6">
-        <p className="font-mono text-2xs font-medium tracking-kicker text-muted uppercase">
+    <section className="overflow-hidden rounded-xl bg-surface hairline shadow-xs">
+      <header className="flex flex-col gap-1 border-b border-line bg-raised/60 px-5 py-4 sm:px-6">
+        <p className="font-mono text-xs font-semibold tracking-wider text-steel uppercase">
           {kicker}
         </p>
-        <h2 className="font-display text-xl font-medium tracking-tight text-fg sm:text-2xl">
+        <h2 className="font-display text-xl font-semibold tracking-tight text-fg sm:text-2xl">
           {title}
         </h2>
       </header>
       <div className="px-5 py-5 sm:px-6 sm:py-6">{children}</div>
-      <footer className="border-t border-line bg-raised/60 px-5 py-4 sm:px-6">
+      <footer className="border-t border-line bg-raised/70 px-5 py-4 sm:px-6">
         <p className="text-sm leading-relaxed text-muted">
-          <span className="font-medium text-steel">Insight. </span>
+          <span className="font-semibold text-steel">Insight. </span>
           {insight}
         </p>
       </footer>
@@ -87,7 +87,7 @@ export function Segmented<T extends string>({
     <div
       role="radiogroup"
       aria-label={ariaLabel}
-      className="flex flex-wrap gap-1 rounded-md bg-raised p-1"
+      className="flex flex-wrap gap-1 rounded-lg border border-line bg-raised p-1"
     >
       {options.map((opt) => {
         const on = opt.id === value;
@@ -99,8 +99,10 @@ export function Segmented<T extends string>({
             aria-checked={on}
             onClick={() => onChange(opt.id)}
             className={cn(
-              "min-h-10 flex-1 rounded-sm px-3 text-sm font-medium transition-[background-color,color] duration-150 ease-out",
-              on ? "bg-fg text-bg" : "text-muted hover:text-fg",
+              "min-h-10 flex-1 rounded-md px-3 text-sm font-medium transition-[background-color,color,box-shadow] duration-150 ease-out",
+              on
+                ? "bg-surface text-steel shadow-xs border border-line"
+                : "text-muted hover:text-fg",
             )}
           >
             {opt.label}
@@ -129,8 +131,8 @@ export function Stat({
   } as const;
   return (
     <div className="grid gap-1">
-      <p className="font-mono text-2xs tracking-kicker text-muted uppercase">{label}</p>
-      <p className={cn("font-mono text-lg tabular-nums", tones[tone])}>{value}</p>
+      <p className="font-mono text-xs font-semibold tracking-wider text-muted uppercase">{label}</p>
+      <p className={cn("font-mono text-lg tabular-nums font-semibold", tones[tone])}>{value}</p>
     </div>
   );
 }
@@ -143,10 +145,10 @@ export function NodeDot({
   label?: string;
 }) {
   const fill = {
-    idle: "bg-raised hairline",
-    read: "bg-steel/80",
+    idle: "bg-surface border border-line-strong",
+    read: "bg-steel",
     write: "bg-fg",
-    dead: "bg-danger/70",
+    dead: "bg-danger/80",
     hot: "bg-danger",
     ok: "bg-ok",
     warn: "bg-warn",

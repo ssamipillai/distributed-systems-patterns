@@ -33,19 +33,19 @@ export function Chapter({ domain }: { domain: Domain }) {
       </aside>
 
       <article className="min-w-0">
-        <p className="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-steel uppercase">
+        <p className="flex items-center gap-2 font-mono text-xs font-semibold tracking-wider text-steel uppercase">
           <Icon className="size-3.5" aria-hidden />
           Chapter {String(domain.id).padStart(2, "0")} · {domain.minutes} min
         </p>
-        <h1 className="mt-3 font-display text-3xl font-medium tracking-tight text-fg sm:text-4xl">
+        <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
           {domain.title}
         </h1>
-        <blockquote className="mt-6 max-w-3xl border-l border-steel/40 pl-4 font-display text-lg leading-snug text-muted italic sm:text-xl">
+        <blockquote className="mt-6 max-w-3xl rounded-r-lg border-l-4 border-steel bg-[#e8f0fe] px-5 py-4 text-base leading-relaxed text-[#174ea6] sm:text-lg">
           {domain.thesis}
         </blockquote>
         <p className="mt-5 max-w-3xl text-sm leading-relaxed text-muted">{domain.stakes}</p>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-fg/90">
-          <span className="font-medium text-steel">The dilemma. </span>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-fg">
+          <span className="font-semibold text-steel">The dilemma. </span>
           {domain.dilemma}
         </p>
 
@@ -149,8 +149,10 @@ export function Chapter({ domain }: { domain: Domain }) {
             type="button"
             onClick={() => toggleMastered(domain.slug)}
             className={cn(
-              "inline-flex h-12 items-center justify-center gap-2 rounded-md px-4 text-sm font-medium",
-              done ? "bg-ok/15 text-ok" : "bg-fg text-bg",
+              "inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-medium transition-colors shadow-xs",
+              done
+                ? "bg-[#e6f4ea] text-[#137333] border border-[#ceead6]"
+                : "bg-steel text-white hover:bg-[#1557b0]",
             )}
           >
             <Check className="size-4" aria-hidden />
