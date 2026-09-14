@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.node_modules.lock
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build and deployment outputs
+dist/
+.output/
+.nitro/
+.vercel/
+
+# Sandbox and IDE temporary files
+.project_id
+.github_repo
+artifacts/
+.grok/
+
+# QA and test screenshots (preserve folder structure)
+screenshots/*.png
+screenshots/*.json
+!screenshots/.gitkeep
+
+# System and editor files
+.DS_Store
+Thumbs.db
+*.log
